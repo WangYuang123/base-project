@@ -1,0 +1,16 @@
+$primay-color: #409EFF;
+$danger-color: #F56C6C;
+$warning-color: #E6A23C;
+$success-color: #67C23A;
+$base-color: #303133;
+$grey-color: #909399;
+$border-color: #DCDFE6;
+:export {
+  primay-color: $primay-color;
+  danger-color: $danger-color;
+  warning-color: $warning-color;
+  success-color: $success-color;
+  base-color: $base-color;
+  grey-color: $grey-color;
+  border-color: $border-color;
+}
