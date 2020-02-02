@@ -13,13 +13,14 @@
         :xl="{ span: 12 }"
       >
         <div class="nav width-100 height-40-px b-flex">
-          <div
+          <router-link
             v-for="item in navs"
             :key="item.value"
+            to="/debounce"
             class="height-100 line-height-40-px b-f-justify-cen b-text-cen width-100"
           >
             <span>{{ item.label }}</span>
-          </div>
+          </router-link>
         </div>
       </el-col>
     </el-row>
