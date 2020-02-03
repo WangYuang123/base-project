@@ -6,6 +6,7 @@
     <p>练习工作区和暂存区-master</p>
     <p>修改master分支上的内容</p>
     <p>修改master分支上的内容2</p>
+    <p>保存master分支上的内容</p>
   </div>
 </template>
 
