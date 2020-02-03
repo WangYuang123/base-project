@@ -7,6 +7,7 @@
     <p>修改master分支上的内容</p>
     <p>修改master分支上的内容2</p>
     <p>保存master分支上的内容</p>
+    <p>修复master分支上的bug</p>
   </div>
 </template>
 
