@@ -12,15 +12,15 @@
         :lg="{ span: 14 }"
         :xl="{ span: 12 }"
       >
-        <div class="nav width-100 height-40-px b-flex">
-          <router-link
-            v-for="item in navs"
-            :key="item.value"
-            to="/debounce"
-            class="height-100 line-height-40-px b-f-justify-cen b-text-cen width-100"
-          >
-            <span>{{ item.label }}</span>
-          </router-link>
+        <div class="nav width-100 height-40-px">
+          <div v-for="(item, index) in navs" :key="index">
+            <router-link
+              :to="item.to"
+              class="height-100 line-height-40-px width-100"
+            >
+              <span>{{ item.label }}</span>
+            </router-link>
+          </div>
         </div>
       </el-col>
     </el-row>
@@ -33,8 +33,8 @@ export default {
   data() {
     return {
       navs: [
-        { label: "主页", value: 1 },
-        { label: "主页", value: 2 }
+        { label: "防抖节流", to: "/debounce" },
+        { label: "拖拽拼接文字", to: "/dragdrop" }
       ]
     };
   }
