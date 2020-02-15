@@ -34,7 +34,8 @@ export default {
     return {
       navs: [
         { label: "防抖节流", to: "/debounce" },
-        { label: "拖拽拼接文字", to: "/dragdrop" }
+        { label: "拖拽拼接文字", to: "/dragdrop" },
+        { label: "vue-router解析流程", to: "/routerProcess" }
       ]
     };
   }
