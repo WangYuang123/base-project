@@ -6,6 +6,7 @@ import dragdrop from "@/views/dragdrop.vue";
 import routerProcess from "@/views/routerProcess/index.vue";
 import processTom from "@/views/routerProcess/processTom.vue";
 import processJack from "@/views/routerProcess/processJack.vue";
+import vuexCom from "@/views/testVuex/index.vue";
 Vue.use(VueRouter);
 
 const routes = [
@@ -52,7 +53,12 @@ const routes = [
         }
       }
     ]
-  }
+  },
+  {
+    path: "/vuex",
+    name: "vuex",
+    component: vuexCom
+  },
 ];
 
 const router = new VueRouter({

@@ -7,7 +7,6 @@ import "./plugins/element.js";
 import "@/style/index.scss";
 
 Vue.config.productionTip = false;
-
 new Vue({
   router,
   store,
