@@ -7,6 +7,7 @@ import routerProcess from "@/views/routerProcess/index.vue";
 import processTom from "@/views/routerProcess/processTom.vue";
 import processJack from "@/views/routerProcess/processJack.vue";
 import vuexCom from "@/views/testVuex/index.vue";
+import copy from "@/views/copy.vue";
 Vue.use(VueRouter);
 
 const routes = [
@@ -59,6 +60,11 @@ const routes = [
     name: "vuex",
     component: vuexCom
   },
+  {
+    path: "/copy",
+    name: "copy",
+    component: copy
+  }
 ];
 
 const router = new VueRouter({

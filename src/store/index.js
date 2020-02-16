@@ -1,7 +1,7 @@
 import Vue from "vue";
 import Vuex from "vuex";
-import moduleA from './module/moduleA';
-import moduleB from './module/moduleB';
+import moduleA from "./module/moduleA";
+import moduleB from "./module/moduleB";
 Vue.use(Vuex);
 
 // const store = new Vuex.Store({
@@ -33,10 +33,11 @@ Vue.use(Vuex);
 // }
 export default new Vuex.Store({
   state: {
-    name: '根节点name'
+    name: "根节点name"
   },
   modules: {
-    moduleA, moduleB,
+    moduleA,
+    moduleB
   }
   // state: {},
   // mutations: {},
@@ -82,5 +83,3 @@ export default new Vuex.Store({
   //   }
   // }
 });
-
-
