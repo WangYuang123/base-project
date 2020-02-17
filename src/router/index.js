@@ -8,6 +8,7 @@ import processTom from "@/views/routerProcess/processTom.vue";
 import processJack from "@/views/routerProcess/processJack.vue";
 import vuexCom from "@/views/testVuex/index.vue";
 import copy from "@/views/copy.vue";
+import transmit from "@/views/transmit/index.vue";
 Vue.use(VueRouter);
 
 const routes = [
@@ -64,6 +65,11 @@ const routes = [
     path: "/copy",
     name: "copy",
     component: copy
+  },
+  {
+    path: "/transmit",
+    name: "transmit",
+    component: transmit
   }
 ];
 

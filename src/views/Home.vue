@@ -37,7 +37,8 @@ export default {
         { label: "拖拽拼接文字", to: "/dragdrop" },
         { label: "vue-router解析流程", to: "/routerProcess" },
         { label: "练习vuex", to: "/vuex" },
-        { label: "深拷贝", to: "/copy" }
+        { label: "深拷贝", to: "/copy" },
+        { label: "组件之间的通讯", to: "/transmit" }
       ]
     };
   }

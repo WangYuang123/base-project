@@ -7,6 +7,17 @@
 </template>
 
 <script>
+function clone(target) {
+  if (typeof target === "object") {
+    let cloneTarget = Array.isArray(target) ? [] : {};
+    for (const key in target) {
+      cloneTarget[key] = clone(target[key]);
+    }
+    return cloneTarget;
+  } else {
+    return target;
+  }
+}
 export default {
   data() {
     return {
@@ -21,12 +32,18 @@ export default {
           age: 39,
           hobby: ["writing", "travel"]
         }
+        // yuqing: '123',
+        // yusheng: '456'
       },
       cloneTarget: {}
     };
   },
   methods: {
     copyFun(target) {
+      // 简单版
+      this.cloneTarget = clone(target);
+
+      // 浅拷贝
       //  let cloneTarget = {}
       //  let target = this.obj
       //  for(const key in target) {
@@ -35,20 +52,9 @@ export default {
       //  }
       //  this.cloneTarget = cloneTarget
       //  console.log(this.cloneTarget)
-
-      // 简单版
-      if (typeof target === "object") {
-        let cloneTarget = {};
-        for (const key in target) {
-          cloneTarget[key] = this.copyFun(target[key]);
-        }
-      } else {
-        return target;
-      }
-      // console.log(cloneTarget);
     },
     updatayqname() {
-      this.obj.yuqing.name = "jy";
+      // this.obj.yuqing.name = "jy";
       console.log(this.cloneTarget);
     }
   }
