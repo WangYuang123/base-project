@@ -14,15 +14,17 @@
 
 <script>
 function debounce(fn, timeout = 1000) {
-  let timer = null;
-  return (...args) => {
-    if (timer) {
-      clearTimeout(timer);
+    let timer = null
+    return () => {
+        if(timer){
+            clearTimeout(timer)
+        } 
+        timer = setTimeout(() => {
+            fn()
+            clearTimeout(timer)
+            timer = null
+        }, timeout)
     }
-    timer = setTimeout(() => {
-      fn.apply(this, args);
-    }, timeout);
-  };
 }
 function throlle(fn, timeout = 1000) {
   let timer = null;
@@ -45,8 +47,8 @@ export default {
   },
   mounted() {},
   methods: {
-    debounceFun: debounce(x => {
-      console.log(x);
+    debounceFun: debounce(() => {
+      console.log('okkkk')
     }),
     throlleFun: throlle(x => {
       console.log(x);

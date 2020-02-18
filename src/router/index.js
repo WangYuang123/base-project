@@ -9,6 +9,7 @@ import processJack from "@/views/routerProcess/processJack.vue";
 import vuexCom from "@/views/testVuex/index.vue";
 import copy from "@/views/copy.vue";
 import transmit from "@/views/transmit/index.vue";
+import eventloop from "@/views/eventloop.vue";
 Vue.use(VueRouter);
 
 const routes = [
@@ -70,6 +71,11 @@ const routes = [
     path: "/transmit",
     name: "transmit",
     component: transmit
+  },
+  {
+    path: "/eventloop",
+    name: "eventloop",
+    component: eventloop
   }
 ];
 
