@@ -10,14 +10,18 @@ import vuexCom from "@/views/testVuex/index.vue";
 // import copy from "@/views/copy.vue";
 import transmit from "@/views/transmit/index.vue";
 import eventloop from "@/views/eventloop.vue";
+// import routerList from './user.router.js'
 Vue.use(VueRouter);
 
-const routerList = []
+let routerList = [];
 function importAll(routerArr) {
   routerArr.keys().forEach(key => {
-    routerList.push(routerArr(key).default)
-  })
+    // console.log(routerArr(key).default)
+    // routerList = routerList.concat(routerArr(key).default)
+    routerList = [...routerList, ...routerArr(key).default];
+  });
 }
+
 // const baseRuoter = [
 //   {
 //     path: "/",
@@ -29,7 +33,7 @@ function importAll(routerArr) {
 //     }
 //   },
 // ]
-importAll(require.context('.', true, /.router\.js/))
+importAll(require.context(".", true, /.router\.js/));
 const routes = [
   ...routerList,
   {
@@ -94,7 +98,7 @@ const routes = [
   {
     path: "/randerTem",
     name: "randerTem",
-    component: () => import('@/views/randerTem.vue')
+    component: () => import("@/views/randerTem.vue")
   }
 ];
 

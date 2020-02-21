@@ -42,7 +42,8 @@ export default {
         { label: "深拷贝", to: "/copy" },
         { label: "组件之间的通讯", to: "/transmit" },
         { label: "Eventloop", to: "/eventloop" },
-        { label: "render编写template", to: "/randerTem" }
+        { label: "render编写template", to: "/randerTem" },
+        { label: "BFC", to: "/BFC" }
       ]
     };
   }
