@@ -3,7 +3,9 @@
     <div class="head width-100 height-60-px line-height-60-px b-text-cen">
       <h3 class="priamy-color">2020-01-21</h3>
     </div>
+    <global></global>
     <div class="width-100 height-60-px mb-20"></div>
+    <el-button v-permission="'10'">权限按钮</el-button>
     <el-row type="flex" justify="center">
       <el-col
         :xs="{ span: 22 }"
@@ -39,7 +41,8 @@ export default {
         { label: "练习vuex", to: "/vuex" },
         { label: "深拷贝", to: "/copy" },
         { label: "组件之间的通讯", to: "/transmit" },
-        { label: "Eventloop", to: "/eventloop" }
+        { label: "Eventloop", to: "/eventloop" },
+        { label: "render编写template", to: "/randerTem" }
       ]
     };
   }

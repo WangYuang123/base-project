@@ -7,12 +7,31 @@ import routerProcess from "@/views/routerProcess/index.vue";
 import processTom from "@/views/routerProcess/processTom.vue";
 import processJack from "@/views/routerProcess/processJack.vue";
 import vuexCom from "@/views/testVuex/index.vue";
-import copy from "@/views/copy.vue";
+// import copy from "@/views/copy.vue";
 import transmit from "@/views/transmit/index.vue";
 import eventloop from "@/views/eventloop.vue";
 Vue.use(VueRouter);
 
+const routerList = []
+function importAll(routerArr) {
+  routerArr.keys().forEach(key => {
+    routerList.push(routerArr(key).default)
+  })
+}
+// const baseRuoter = [
+//   {
+//     path: "/",
+//     name: "home",
+//     component: Home,
+//     beforeEnter(to, from, next) {
+//       console.log("首页路由独享守卫：beforeEnter");
+//       next();
+//     }
+//   },
+// ]
+importAll(require.context('.', true, /.router\.js/))
 const routes = [
+  ...routerList,
   {
     path: "/",
     name: "home",
@@ -63,11 +82,6 @@ const routes = [
     component: vuexCom
   },
   {
-    path: "/copy",
-    name: "copy",
-    component: copy
-  },
-  {
     path: "/transmit",
     name: "transmit",
     component: transmit
@@ -76,6 +90,11 @@ const routes = [
     path: "/eventloop",
     name: "eventloop",
     component: eventloop
+  },
+  {
+    path: "/randerTem",
+    name: "randerTem",
+    component: () => import('@/views/randerTem.vue')
   }
 ];
 
