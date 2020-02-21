@@ -40,60 +40,60 @@
 export default {
   data() {
     return {
-      texts: [{ name: "凡", value: "fan" }],
-      curValue: "",
+      texts: [{ name: '凡', value: 'fan' }],
+      curValue: '',
       flags: false,
       position: { x: 0, y: 0 },
-      nx: "",
-      ny: "",
-      dx: "",
-      dy: "",
+      nx: '',
+      ny: '',
+      dx: '',
+      dy: '',
       xPum: 0,
       yPum: 0,
-      dw: "",
-      dh: "",
-      clientWidth: "", // 浏览器宽度
-      clientHeight: "" // 浏览器高度
-    };
+      dw: '',
+      dh: '',
+      clientWidth: '', // 浏览器宽度
+      clientHeight: '' // 浏览器高度
+    }
   },
   mounted() {
     this.clientWidth =
       window.innerWidth ||
       document.documentElement.clientWidth ||
-      document.body.clientWidth;
+      document.body.clientWidth
     this.clientHeight =
       window.innerHeight ||
       document.documentElement.innerHeight ||
-      document.body.innerHeight;
+      document.body.innerHeight
   },
   methods: {
     down(event, value) {
-      const touch = event.touches[0];
-      this.position.x = touch.clientX; // 鼠标点击起始位置x
-      this.position.y = touch.clientY; // 鼠标点击起始位置y
-      this.curValue = value;
-      this.dx = event.target.offsetLeft; // div距离左侧距离
-      this.dy = event.target.offsetTop; // div距离上侧距离
-      this.dw = event.target.offsetWidth;
-      this.dh = event.target.offsetHeight;
+      const touch = event.touches[0]
+      this.position.x = touch.clientX // 鼠标点击起始位置x
+      this.position.y = touch.clientY // 鼠标点击起始位置y
+      this.curValue = value
+      this.dx = event.target.offsetLeft // div距离左侧距离
+      this.dy = event.target.offsetTop // div距离上侧距离
+      this.dw = event.target.offsetWidth
+      this.dh = event.target.offsetHeight
     },
     move(event) {
-      const touch = event.touches[0];
-      this.nx = touch.clientX - this.position.x;
-      this.ny = touch.clientY - this.position.y;
+      const touch = event.touches[0]
+      this.nx = touch.clientX - this.position.x
+      this.ny = touch.clientY - this.position.y
       if (this.nx < 0) {
-        this.xPum = 0;
+        this.xPum = 0
       } else if (this.nx > this.clientWidth - this.dw - 10) {
-        this.xPum = this.clientWidth - this.dw - 6;
+        this.xPum = this.clientWidth - this.dw - 6
       } else {
-        this.xPum = this.dx + this.nx;
+        this.xPum = this.dx + this.nx
       }
       if (this.ny < 0) {
-        this.yPum = 0;
+        this.yPum = 0
       } else if (this.ny > this.clientHeight - this.dh - 10) {
-        this.yPum = this.clientHeight - this.dh - 6;
+        this.yPum = this.clientHeight - this.dh - 6
       } else {
-        this.yPum = this.dy + this.ny;
+        this.yPum = this.dy + this.ny
       }
     },
     end() {
@@ -103,39 +103,39 @@ export default {
         this.xPum > this.$refs.showTop.offsetLeft &&
         this.xPum < this.$refs.showTop.offsetLeft + this.dw
       ) {
-        this.xPum = this.$refs.showTop.offsetLeft;
-        this.yPum = this.$refs.showTop.offsetTop;
+        this.xPum = this.$refs.showTop.offsetLeft
+        this.yPum = this.$refs.showTop.offsetTop
       } else if (
         this.yPum > this.$refs.showBottom.offsetTop &&
         this.yPum < this.$refs.showBottom.offsetTop + this.dh &&
         this.xPum > this.$refs.showBottom.offsetLeft &&
         this.xPum < this.$refs.showBottom.offsetLeft + this.dw
       ) {
-        this.xPum = this.$refs.showBottom.offsetLeft;
-        this.yPum = this.$refs.showBottom.offsetTop;
+        this.xPum = this.$refs.showBottom.offsetLeft
+        this.yPum = this.$refs.showBottom.offsetTop
       } else if (
         this.yPum > this.$refs.showLeft.offsetTop &&
         this.yPum < this.$refs.showLeft.offsetTop + this.dh &&
         this.xPum > this.$refs.showLeft.offsetLeft &&
         this.xPum < this.$refs.showLeft.offsetLeft + this.dw
       ) {
-        this.xPum = this.$refs.showLeft.offsetLeft;
-        this.yPum = this.$refs.showLeft.offsetTop;
+        this.xPum = this.$refs.showLeft.offsetLeft
+        this.yPum = this.$refs.showLeft.offsetTop
       } else if (
         this.yPum > this.$refs.showRight.offsetTop &&
         this.yPum < this.$refs.showRight.offsetTop + this.dh &&
         this.xPum > this.$refs.showRight.offsetLeft &&
         this.xPum < this.$refs.showRight.offsetLeft + this.dw
       ) {
-        this.xPum = this.$refs.showRight.offsetLeft;
-        this.yPum = this.$refs.showRight.offsetTop;
+        this.xPum = this.$refs.showRight.offsetLeft
+        this.yPum = this.$refs.showRight.offsetTop
       } else {
-        this.xPum = 0;
-        this.yPum = 0;
+        this.xPum = 0
+        this.yPum = 0
       }
     }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>
@@ -155,12 +155,12 @@ export default {
       position: absolute;
       z-index: 999;
       &::before {
-        content: "";
+        content: '';
         padding-top: 100%;
         float: left;
       }
       &::after {
-        content: "";
+        content: '';
         display: block;
         clear: both;
       }
@@ -173,12 +173,12 @@ export default {
         width: 20%;
         border: 1px dashed #aaa;
         &::before {
-          content: "";
+          content: '';
           padding-top: 100%;
           float: left;
         }
         &::after {
-          content: "";
+          content: '';
           display: block;
           clear: both;
         }

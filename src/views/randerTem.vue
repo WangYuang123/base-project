@@ -2,30 +2,30 @@
 export default {
   data() {
     return {
-      type: "succes"
-    };
+      type: 'succes'
+    }
   },
   render(h) {
-    return h("button", {
+    return h('button', {
       class: {
         btn: true,
-        "btn-success": this.type === "succes",
-        "btn-danger": this.type === "danger"
+        'btn-success': this.type === 'succes',
+        'btn-danger': this.type === 'danger'
       },
       domProps: {
-        innerText: "我是个按钮"
+        innerText: '我是个按钮'
       },
       on: {
         click: this.handleClick
       }
-    });
+    })
   },
   methods: {
     handleClick() {
-      console.log("okkk");
+      console.log('okkk')
     }
   }
-};
+}
 </script>
 
 <style scoped>

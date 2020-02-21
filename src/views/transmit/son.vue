@@ -7,14 +7,14 @@
 
 <script>
 export default {
-  name: "son",
+  name: 'son',
   data() {
     return {
       index: 1111111111111
-    };
+    }
   },
-  inject: ["father1"]
-};
+  inject: ['father1']
+}
 </script>
 
 <style></style>

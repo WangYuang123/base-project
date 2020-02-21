@@ -8,10 +8,10 @@
 </template>
 
 <script>
-import sonCom1 from "./son";
-import sonCom2 from "./son2";
+import sonCom1 from './son'
+import sonCom2 from './son2'
 export default {
-  name: "father",
+  name: 'father',
   components: {
     sonCom1,
     sonCom2
@@ -19,8 +19,8 @@ export default {
   data() {
     return {
       boolSon1: false,
-      sonIndex: ""
-    };
+      sonIndex: ''
+    }
   },
   computed: {
     // sonIndex() {
@@ -29,17 +29,17 @@ export default {
     // }
   },
   provide: {
-    father1: "father11111"
+    father1: 'father11111'
   },
   mounted() {
     // console.log(this.$children)
     setTimeout(() => {
-      this.boolSon1 = true;
-    }, 1000);
-    this.sonIndex = this.$children[0].index;
+      this.boolSon1 = true
+    }, 1000)
+    this.sonIndex = this.$children[0].index
     // console.log(provide)
-    const uniqueArr = this.unique([1, 1, 2, 3, 1, 2, 3, 5]);
-    console.log(uniqueArr);
+    const uniqueArr = this.unique([1, 1, 2, 3, 1, 2, 3, 5])
+    console.log(uniqueArr)
   },
   methods: {
     // unique(arr) {
@@ -58,21 +58,21 @@ export default {
     // }
     unique(arr) {
       if (arr instanceof Array) {
-        throw Error("当前传入不是数组");
+        throw Error('当前传入不是数组')
       } else {
-        let list = [];
-        let obj = {};
+        let list = []
+        let obj = {}
         for (let i = 0; i < arr.length; i++) {
           if (!obj[arr[i]]) {
-            list.push(arr[i]);
-            obj[arr[i]] = true;
+            list.push(arr[i])
+            obj[arr[i]] = true
           }
         }
-        return list;
+        return list
       }
     }
   }
-};
+}
 </script>
 
 <style></style>

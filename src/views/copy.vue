@@ -8,14 +8,14 @@
 
 <script>
 function clone(target) {
-  if (typeof target === "object") {
-    let cloneTarget = Array.isArray(target) ? [] : {};
+  if (typeof target === 'object') {
+    let cloneTarget = Array.isArray(target) ? [] : {}
     for (const key in target) {
-      cloneTarget[key] = clone(target[key]);
+      cloneTarget[key] = clone(target[key])
     }
-    return cloneTarget;
+    return cloneTarget
   } else {
-    return target;
+    return target
   }
 }
 export default {
@@ -23,25 +23,25 @@ export default {
     return {
       obj: {
         yuqing: {
-          name: "jinxiu",
+          name: 'jinxiu',
           age: 29,
-          hobby: ["perform", "dance"]
+          hobby: ['perform', 'dance']
         },
         yusheng: {
-          name: "xiaowanqing",
+          name: 'xiaowanqing',
           age: 39,
-          hobby: ["writing", "travel"]
+          hobby: ['writing', 'travel']
         }
         // yuqing: '123',
         // yusheng: '456'
       },
       cloneTarget: {}
-    };
+    }
   },
   methods: {
     copyFun(target) {
       // 简单版
-      this.cloneTarget = clone(target);
+      this.cloneTarget = clone(target)
 
       // 浅拷贝
       //  let cloneTarget = {}
@@ -55,10 +55,10 @@ export default {
     },
     updatayqname() {
       // this.obj.yuqing.name = "jy";
-      console.log(this.cloneTarget);
+      console.log(this.cloneTarget)
     }
   }
-};
+}
 </script>
 
 <style></style>

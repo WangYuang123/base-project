@@ -4,13 +4,13 @@
 
 <script>
 export default {
-  name: "son",
+  name: 'son',
   data() {
     return {
       index: 2222222222222
-    };
+    }
   }
-};
+}
 </script>
 
 <style></style>

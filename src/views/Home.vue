@@ -31,23 +31,23 @@
 
 <script>
 export default {
-  name: "home",
+  name: 'home',
   data() {
     return {
       navs: [
-        { label: "防抖节流", to: "/debounce" },
-        { label: "拖拽拼接文字", to: "/dragdrop" },
-        { label: "vue-router解析流程", to: "/routerProcess" },
-        { label: "练习vuex", to: "/vuex" },
-        { label: "深拷贝", to: "/copy" },
-        { label: "组件之间的通讯", to: "/transmit" },
-        { label: "Eventloop", to: "/eventloop" },
-        { label: "render编写template", to: "/randerTem" },
-        { label: "BFC", to: "/BFC" }
+        { label: '防抖节流', to: '/debounce' },
+        { label: '拖拽拼接文字', to: '/dragdrop' },
+        { label: 'vue-router解析流程', to: '/routerProcess' },
+        { label: '练习vuex', to: '/vuex' },
+        { label: '深拷贝', to: '/copy' },
+        { label: '组件之间的通讯', to: '/transmit' },
+        { label: 'Eventloop', to: '/eventloop' },
+        { label: 'render编写template', to: '/randerTem' },
+        { label: 'BFC', to: '/BFC' }
       ]
-    };
+    }
   }
-};
+}
 </script>
 <style lang="scss" scoped>
 .home {

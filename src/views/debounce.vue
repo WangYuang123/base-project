@@ -14,50 +14,50 @@
 
 <script>
 function debounce(fn, timeout = 1000) {
-  let timer = null;
+  let timer = null
   return () => {
     if (timer) {
-      clearTimeout(timer);
+      clearTimeout(timer)
     }
     timer = setTimeout(() => {
-      fn();
-      clearTimeout(timer);
-      timer = null;
-    }, timeout);
-  };
+      fn()
+      clearTimeout(timer)
+      timer = null
+    }, timeout)
+  }
 }
 function throlle(fn, timeout = 1000) {
-  let timer = null;
+  let timer = null
   return (...args) => {
     if (!timer) {
-      fn.apply(this, args);
+      fn.apply(this, args)
       timer = setTimeout(() => {
-        clearTimeout(timer);
-        timer = null;
-      }, timeout);
+        clearTimeout(timer)
+        timer = null
+      }, timeout)
     }
-  };
+  }
 }
 export default {
-  name: "debounce",
+  name: 'debounce',
   data() {
     return {
       timer: null
-    };
+    }
   },
   mounted() {},
   methods: {
     debounceFun: debounce(() => {
-      console.log("okkkk");
+      console.log('okkkk')
     }),
     throlleFun: throlle(e => {
       if (e.target.scrollTop === 0) {
-        console.log("okkk");
+        console.log('okkk')
       }
-      console.log(e.target.scrollTop);
+      console.log(e.target.scrollTop)
     })
   }
-};
+}
 </script>
 <style lang="scss" scoped>
 .debounce {
