@@ -1,8 +1,8 @@
-import Vue from "vue";
-import Vuex from "vuex";
-import moduleA from "./module/moduleA";
-import moduleB from "./module/moduleB";
-Vue.use(Vuex);
+import Vue from 'vue'
+import Vuex from 'vuex'
+import moduleA from './module/moduleA'
+import moduleB from './module/moduleB'
+Vue.use(Vuex)
 
 // const store = new Vuex.Store({
 //   state: {
@@ -33,7 +33,7 @@ Vue.use(Vuex);
 // }
 export default new Vuex.Store({
   state: {
-    name: "根节点name"
+    name: '根节点name'
   },
   modules: {
     moduleA,
@@ -82,4 +82,4 @@ export default new Vuex.Store({
   //     })
   //   }
   // }
-});
+})

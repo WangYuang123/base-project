@@ -43,8 +43,24 @@ export default {
         { label: '组件之间的通讯', to: '/transmit' },
         { label: 'Eventloop', to: '/eventloop' },
         { label: 'render编写template', to: '/randerTem' },
-        { label: 'BFC', to: '/BFC' }
+        { label: 'BFC', to: '/BFC' },
+        { label: '子组件控制父组件的slot', to: '/controlSlot' }
       ]
+    }
+  },
+  mounted() {
+    // console.log(this.dataType(123, 'Number'))
+    // const add = function add(x) {
+    //   return function(y) {
+    //     return x + y
+    //   }
+    // }
+    // const add1 = add(3)
+  },
+  methods: {
+    dataType(tat, type) {
+      const dataType = Object.prototype.toString.call(tat).slice(8, -1)
+      return dataType === type ? true : false
     }
   }
 }

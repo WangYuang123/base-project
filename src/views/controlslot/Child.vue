@@ -1,5 +1,7 @@
 <template>
-  <div>我是全局组件</div>
+  <div>
+    <h5>我是内容区域子组件</h5>
+  </div>
 </template>
 
 <script>

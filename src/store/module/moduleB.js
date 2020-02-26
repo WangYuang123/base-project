@@ -1,17 +1,17 @@
 export default {
   namespaced: true,
   state: {
-    text: "moduleB"
+    text: 'moduleB'
   },
   getters: {},
   mutations: {
     setText(state, value) {
-      state.text = value;
+      state.text = value
     }
   },
   actions: {
     callActionB({ commit }) {
-      commit("setText", "BBBBB");
+      commit('setText', 'BBBBB')
     }
   }
-};
+}

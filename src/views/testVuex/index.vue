@@ -29,9 +29,9 @@
 
 <script>
 // mapState, mapGetters, mapMutations, mapActions
-import { mapState, mapGetters, mapMutations } from "vuex";
-import { createNamespacedHelpers } from "vuex";
-const { mapActions } = createNamespacedHelpers("moduleB");
+import { mapState, mapGetters, mapMutations } from 'vuex'
+import { createNamespacedHelpers } from 'vuex'
+const { mapActions } = createNamespacedHelpers('moduleB')
 export default {
   computed: {
     ...mapState({
@@ -39,7 +39,7 @@ export default {
       name2: state => state.moduleB.text
     }),
     ...mapGetters({
-      getName: "moduleA/getName"
+      getName: 'moduleA/getName'
     })
     // ...mapGetters(['textCount']),
     // ...mapState(['count'])
@@ -49,12 +49,12 @@ export default {
   },
   methods: {
     ...mapMutations({
-      setText: "moduleA/setText"
+      setText: 'moduleA/setText'
     }),
     // ...mapActions({
     //   callAction: 'callAction',
     // })
-    ...mapActions(["callActionB"])
+    ...mapActions(['callActionB'])
     // increment
     // ...mapMutations(['increment', 'reduce']),
     // reduceLocal() {
@@ -67,7 +67,7 @@ export default {
     //  })
     // }
   }
-};
+}
 </script>
 
 <style></style>

@@ -19,23 +19,23 @@
 <script>
 export default {
   beforeRouteEnter(to, from, next) {
-    console.log("user组件内守卫----->beforeRouteEnter");
-    next();
+    console.log('user组件内守卫----->beforeRouteEnter')
+    next()
   },
   beforeRouteUpdate(to, from, next) {
-    console.log("user组件更新守卫--->beforeRouteUpdate");
-    next();
+    console.log('user组件更新守卫--->beforeRouteUpdate')
+    next()
   },
   beforeRouteLeave(to, from, next) {
-    console.log("离开组件守卫---->beforeRouteLeave");
-    const answer = window.confirm("你是否要离开user组件");
+    console.log('离开组件守卫---->beforeRouteLeave')
+    const answer = window.confirm('你是否要离开user组件')
     if (answer) {
-      next();
+      next()
     } else {
-      next(false);
+      next(false)
     }
   }
-};
+}
 </script>
 
 <style></style>

@@ -48,8 +48,8 @@ export default {
       ny: '',
       dx: '',
       dy: '',
-      xPum: 0,
-      yPum: 0,
+      xPum: 20,
+      yPum: 20,
       dw: '',
       dh: '',
       clientWidth: '', // 浏览器宽度
@@ -69,32 +69,34 @@ export default {
   methods: {
     down(event, value) {
       const touch = event.touches[0]
-      this.position.x = touch.clientX // 鼠标点击起始位置x
-      this.position.y = touch.clientY // 鼠标点击起始位置y
       this.curValue = value
       this.dx = event.target.offsetLeft // div距离左侧距离
       this.dy = event.target.offsetTop // div距离上侧距离
       this.dw = event.target.offsetWidth
       this.dh = event.target.offsetHeight
+      this.position.x = touch.clientX - this.dx // 鼠标点击起始位置x
+      this.position.y = touch.clientY - this.dy // 鼠标点击起始位置y
     },
     move(event) {
       const touch = event.touches[0]
-      this.nx = touch.clientX - this.position.x
-      this.ny = touch.clientY - this.position.y
-      if (this.nx < 0) {
-        this.xPum = 0
-      } else if (this.nx > this.clientWidth - this.dw - 10) {
-        this.xPum = this.clientWidth - this.dw - 6
-      } else {
-        this.xPum = this.dx + this.nx
-      }
-      if (this.ny < 0) {
-        this.yPum = 0
-      } else if (this.ny > this.clientHeight - this.dh - 10) {
-        this.yPum = this.clientHeight - this.dh - 6
-      } else {
-        this.yPum = this.dy + this.ny
-      }
+      // this.nx = touch.clientX - this.position.x
+      // this.ny = touch.clientY - this.position.y
+      // if (this.nx < 0) {
+      //   this.xPum = 0
+      // } else if (this.nx > this.clientWidth - this.dw - 10) {
+      //   this.xPum = this.clientWidth - this.dw - 6
+      // } else {
+      //   this.xPum = this.dx + this.nx
+      // }
+      // if (this.ny < 0) {
+      //   this.yPum = 0
+      // } else if (this.ny > this.clientHeight - this.dh - 10) {
+      //   this.yPum = this.clientHeight - this.dh - 6
+      // } else {
+      //   this.yPum = this.dy + this.ny
+      // }
+      this.yPum = touch.clientY - this.position.y
+      this.xPum = touch.clientX - this.position.x
     },
     end() {
       if (
@@ -130,8 +132,8 @@ export default {
         this.xPum = this.$refs.showRight.offsetLeft
         this.yPum = this.$refs.showRight.offsetTop
       } else {
-        this.xPum = 0
-        this.yPum = 0
+        this.xPum = 20
+        this.yPum = 20
       }
     }
   }

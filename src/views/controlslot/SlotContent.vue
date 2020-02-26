@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h3>I am tom</h3>
+    <p style="margin: 20px;color: blue">我是插槽内容</p>
   </div>
 </template>
 

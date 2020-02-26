@@ -1,16 +1,16 @@
 export default {
   namespaced: true,
   state: {
-    text: "moduleA"
+    text: 'moduleA'
   },
   getters: {
     getName(state, getters, roorState) {
-      return state.text + roorState.name;
+      return state.text + roorState.name
     }
   },
   mutations: {
     setText(state, value) {
-      state.text = value;
+      state.text = value
     }
   },
   actions: {
@@ -23,4 +23,4 @@ export default {
     //  }
     // }
   }
-};
+}

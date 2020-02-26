@@ -7,10 +7,10 @@
 <script>
 export default {
   beforeRouteEnter(to, from, next) {
-    console.log("Jack组件内守卫----->beforeRouteEnter");
-    next();
+    console.log('Jack组件内守卫----->beforeRouteEnter')
+    next()
   }
-};
+}
 </script>
 
 <style></style>
