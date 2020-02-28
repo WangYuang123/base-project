@@ -44,7 +44,8 @@ export default {
         { label: 'Eventloop', to: '/eventloop' },
         { label: 'render编写template', to: '/randerTem' },
         { label: 'BFC', to: '/BFC' },
-        { label: '子组件控制父组件的slot', to: '/controlSlot' }
+        { label: '子组件控制父组件的slot', to: '/controlSlot' },
+        { label: 'Map类型', to: '/mapType' }
       ]
     }
   },
@@ -56,11 +57,23 @@ export default {
     //   }
     // }
     // const add1 = add(3)
+    const arr = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4]
+    console.log(this.removeDuplicates(arr))
   },
   methods: {
     dataType(tat, type) {
       const dataType = Object.prototype.toString.call(tat).slice(8, -1)
       return dataType === type ? true : false
+    },
+    removeDuplicates(nums) {
+      if (!nums.length) return 0
+      const obj = {}
+      for (const value of Object.values(nums)) {
+        obj[value] = true
+      }
+      const count = [...Object.keys(obj)].length
+      // console.log(...Object.keys(obj))
+      return count
     }
   }
 }

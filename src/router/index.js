@@ -104,6 +104,11 @@ const routes = [
     path: '/controlSlot',
     name: 'controlSlot',
     component: () => import('@/views/controlslot/index')
+  },
+  {
+    path: '/mapType',
+    name: 'mapType',
+    component: () => import('@/views/MapType')
   }
 ]
 
