@@ -26,6 +26,7 @@
         </div>
       </el-col>
     </el-row>
+    <!--  -->
   </div>
 </template>
 
@@ -45,11 +46,15 @@ export default {
         { label: 'render编写template', to: '/randerTem' },
         { label: 'BFC', to: '/BFC' },
         { label: '子组件控制父组件的slot', to: '/controlSlot' },
-        { label: 'Map类型', to: '/mapType' }
+        { label: 'Map类型', to: '/mapType' },
+        { label: 'rander 函数', to: '/render' }
       ]
     }
   },
   mounted() {
+    // const arr = [1, 1, 2, 2, 3, 1]
+    // console.log(this.unique(arr))
+    // console.log(Array.from(new Set(arr)))
     // console.log(this.dataType(123, 'Number'))
     // const add = function add(x) {
     //   return function(y) {
@@ -57,23 +62,48 @@ export default {
     //   }
     // }
     // const add1 = add(3)
-    const arr = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4]
-    console.log(this.removeDuplicates(arr))
+    // const arr = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4]
+    // console.log(this.removeDuplicates(arr))
+    const arr = [0, 1, 2, 2, 3, 0, 4, 2]
+    console.log(this.removeElement(arr, 2))
   },
   methods: {
+    removeElement(nums, val) {
+      for (var i = 0; i < nums.length; i++) {
+        if (nums[i] === val) {
+          nums.splice(i, 1)
+          i--
+        }
+      }
+      return nums.length
+    },
+    unique(arr) {
+      if (arr instanceof Array) return
+      let list = []
+      let obj = {}
+      for (var i = 0; i < arr.length; i++) {
+        if (!obj[arr[i]]) {
+          list.push(arr[i])
+          obj[arr[i]] = true
+        }
+      }
+      return list
+    },
     dataType(tat, type) {
       const dataType = Object.prototype.toString.call(tat).slice(8, -1)
       return dataType === type ? true : false
     },
     removeDuplicates(nums) {
-      if (!nums.length) return 0
-      const obj = {}
-      for (const value of Object.values(nums)) {
-        obj[value] = true
+      var count = 0
+      var n = nums.length
+      for (let i = 1; i < n; i++) {
+        if (nums[i] != nums[i - 1]) {
+          nums[i - count] = nums[i]
+        } else {
+          count++
+        }
       }
-      const count = [...Object.keys(obj)].length
-      // console.log(...Object.keys(obj))
-      return count
+      return n - count
     }
   }
 }

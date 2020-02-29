@@ -109,6 +109,11 @@ const routes = [
     path: '/mapType',
     name: 'mapType',
     component: () => import('@/views/MapType')
+  },
+  {
+    path: '/render',
+    name: 'render',
+    component: () => import('@/views/renderTest/index')
   }
 ]
 
