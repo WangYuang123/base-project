@@ -47,7 +47,8 @@ export default {
         { label: 'BFC', to: '/BFC' },
         { label: '子组件控制父组件的slot', to: '/controlSlot' },
         { label: 'Map类型', to: '/mapType' },
-        { label: 'rander 函数', to: '/render' }
+        { label: 'rander 函数', to: '/render' },
+        { label: '自动保存表单', to: '/saveForm' }
       ]
     }
   },

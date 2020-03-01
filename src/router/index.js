@@ -114,6 +114,11 @@ const routes = [
     path: '/render',
     name: 'render',
     component: () => import('@/views/renderTest/index')
+  },
+  {
+    path: '/saveForm',
+    name: 'saveForm',
+    component: () => import('@/views/saveForm')
   }
 ]
 
