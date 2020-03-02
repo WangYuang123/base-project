@@ -64,7 +64,7 @@ export default {
   watch: {
     cloneForm: {
       handler: function(val, oldVal) {
-        this.testdebounce(val)
+        this.testdebounce(val, oldVal)
       }
       // handler: function(val, oldVal) {
       //   console.log(val, oldVal)

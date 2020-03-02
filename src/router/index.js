@@ -11,6 +11,9 @@ import vuexCom from '@/views/testVuex/index.vue'
 import transmit from '@/views/transmit/index.vue'
 import eventloop from '@/views/eventloop.vue'
 // import routerList from './user.router.js'
+// import keepAlive from '@/views/keepAlive/father'
+// import keepAliveSon1 from '@/views/keepAlive/son1'
+// import keepAliveSon2 from '@/views/keepAlive/son2'
 Vue.use(VueRouter)
 
 let routerList = []
@@ -119,6 +122,11 @@ const routes = [
     path: '/saveForm',
     name: 'saveForm',
     component: () => import('@/views/saveForm')
+  },
+  {
+    path: '/promise',
+    name: 'promise',
+    component: () => import('@/views/Promise/index')
   }
 ]
 
